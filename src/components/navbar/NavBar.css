@@ -1,0 +1,15 @@
+nav{
+    background-image: url(/public/photos/04-1.jpg);
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center ;
+    margin: 1em;
+    padding: 1em;
+    
+}
+li{
+    list-style: none;
+}
