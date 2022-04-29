@@ -3,11 +3,11 @@ import './clickeable.css'
 
 function Clickeable({texto}) {
   return (
-    <div className='clickeable'>
-        <li>
+          
+    <li className='clickeable'>
             <a href='/'>{texto}</a>
         </li>
-    </div>
+    
   )
 }
 

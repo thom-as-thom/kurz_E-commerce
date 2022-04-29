@@ -9,5 +9,5 @@ justify-content: space-around;
 
 }
 .logoImage{
-    object-fit: contain;
+    object-fit: cover;
 }

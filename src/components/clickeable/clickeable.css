@@ -4,10 +4,12 @@
 
 .clickeable:hover {
 cursor: pointer;
+opacity: 0.6;
 }
 
-.clickeable li a {
+.clickeable a {
     text-decoration: none;
     font-weight: 500;
     font-size: 18px;
+    color: rgb(255, 255, 255);
   }
