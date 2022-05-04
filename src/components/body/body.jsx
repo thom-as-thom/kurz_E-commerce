@@ -4,9 +4,9 @@ import './body.css'
 
 function Body() {
   return (
-      <section className='body'>
+      <main className='body'>
           <ItemListContainer greeting={"Hola soy un greeting"}/>
-      </section>
+      </main>
   )
 }
 
