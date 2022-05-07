@@ -1,3 +1,12 @@
+:root{
+--mainPurple: rgb(130, 83, 149);
+--mainOrange: rgb(239, 147, 115);
+--lightPurple: rgba(130, 83, 149, 0.548);
+--lightOrange: rgba(239, 147, 115, 0.548);
+--whitishCream: rgb(239, 236, 227); 
+--transparentWhitishCream: rgba(239, 236, 227, 0.548); 
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +14,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--whitishCream);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

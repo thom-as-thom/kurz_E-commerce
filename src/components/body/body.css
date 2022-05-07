@@ -1,5 +1,5 @@
 .body{
-    background-color:aqua;
+    background-color: var(--lightOrange);
     display: flex;
     justify-content: center;
     color: white;

@@ -13,12 +13,14 @@ function NavBar() {
     <div className='logo'>
       <Logo/>
     </div>
+    <div id='itemContainer'>
       <ul>
          <Clickeable texto={< ImHome3 />}/> 
          <Clickeable texto= 'Productos'/>
          <Clickeable texto='FAQ'/> 
          <Clickeable texto={<CartWidget/>} />
       </ul>
+    </div>
     </nav>
   
   )

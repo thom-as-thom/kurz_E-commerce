@@ -1,5 +1,6 @@
 .clickeable{
     padding: 1em;
+
 }
 
 .clickeable:hover {
@@ -8,8 +9,9 @@ opacity: 0.6;
 }
 
 .clickeable a {
-    text-decoration: none;
+    text-decoration:none;
     font-weight: 500;
     font-size: 18px;
-    color: rgb(255, 255, 255);
+    color: var(--mainPurple)
+    
   }

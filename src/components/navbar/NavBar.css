@@ -6,10 +6,14 @@ ul{
     flex-direction: row;
     justify-content: space-evenly;
     justify-items: center ;
-    margin: 1em;
-    padding: 1em;
+
+    
     
 }
 li{
     list-style: none;
+}
+#itemContainer{
+    background-color: var(--transparentWhitishCream);
+    margin: 0.5em 0em;
 }
