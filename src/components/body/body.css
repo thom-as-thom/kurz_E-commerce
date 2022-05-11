@@ -1,6 +1,6 @@
 .body{
-    background-color: var(--lightOrange);
+    background-color: var(--whitishCream);
     display: flex;
     justify-content: center;
-    color: white;
+    color: var(--mainOrange);
 }

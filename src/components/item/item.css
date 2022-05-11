@@ -1,0 +1,17 @@
+.item-card{
+    background-color: var(--WhitishCream) ;
+    padding: 1em;
+    margin: 1em;
+
+  }
+.itemImg{
+    height: 15em;
+    width: 15em;
+    object-fit: cover;
+}
+.imgContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
