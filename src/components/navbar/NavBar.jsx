@@ -4,6 +4,7 @@ import Clickeable from '../clickeable/clickeable.jsx';
 import Logo from '../logo/logo';
 import CartWidget from '../cartWidget/cartWidget';
 import { ImHome3 } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,8 +16,12 @@ function NavBar() {
     </div>
     <div id='itemContainer'>
       <ul>
-         <Clickeable texto={< ImHome3 />}/> 
+        <Link to='/'>
+        <Clickeable texto={< ImHome3 />}/> 
+        </Link> 
+         <Link to='/catalogo'>
          <Clickeable texto= 'Productos'/>
+         </Link>
          <Clickeable texto='FAQ'/> 
          <Clickeable texto={<CartWidget/>} />
       </ul>

@@ -1,11 +1,8 @@
 import React from 'react'
-import ItemDetail from './ItemDetail''
+import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 
 function ItemDetailContainer() {
 
-  const Detailed = new Promise ((resolve)=>{
-    setTimeout
-  })
 
   return (
     <ItemDetail name='' img='' price='' description=''/>
