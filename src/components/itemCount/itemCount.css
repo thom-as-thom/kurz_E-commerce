@@ -1,10 +1,12 @@
 #counter{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     border: 3px;
     border-style: solid;
     border-color: var(--mainOrange);
 }
+
 .buttonSpan{
     background-color: aliceblue;
     color: black;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import ItemCount from '../itemCount/itemCount';
 import ItemList from '../ItemList/itemList';
 import BlendsList from "../../data/data";
 
@@ -27,8 +26,6 @@ function ItemListContainer({greeting}) {
       <p>
         {greeting}
       </p>
-     
-      
       {
          loading ?
           <h2> cargando ...</h2>

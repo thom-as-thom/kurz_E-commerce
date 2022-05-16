@@ -1,0 +1,25 @@
+.itemDetail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5em;
+}
+.detailText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30em;
+    width: 30em;
+    background-color: var(--lightOrange);
+}
+.itemDetailImg{
+    height: 30em;
+    width: 30em;
+    object-fit: cover;
+
+}
+.addToCart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
