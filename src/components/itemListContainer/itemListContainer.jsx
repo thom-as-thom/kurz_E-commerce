@@ -28,7 +28,7 @@ function ItemListContainer({greeting}) {
         {greeting}
       </p>
      
-      <ItemCount stock='5' initial='1' onAdd ={(amount)=>console.log (`compraste ${amount} de este producto`) }/>
+      
       {
          loading ?
           <h2> cargando ...</h2>

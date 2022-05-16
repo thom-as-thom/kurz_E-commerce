@@ -22,3 +22,8 @@ code {
     monospace;
 }
 
+a{
+  font-style: normal;
+  text-decoration: none;
+  color: inherit;
+}
