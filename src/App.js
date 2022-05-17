@@ -12,14 +12,16 @@ export default function App() {
     <>
     <BrowserRouter>
         < NavBar />
+        
         <Routes>
           <Route path='/' element= {
             <ItemListContainer/>
           }/>
           <Route path='/catalogo' element={
-            <ItemListContainer greeting={"Hola soy un greeting"}/>
+            <ItemListContainer />
           }/>
-          <Route path= '/detail/:detailId' element={<ItemDetailContainer />} />
+          <Route path= '/item/:id' element={<ItemDetailContainer />} />
+          <Route path= '/category/:cat' element={<ItemListContainer/>}/>
        </Routes>
 
     </BrowserRouter>

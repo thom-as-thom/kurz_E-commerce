@@ -5,7 +5,7 @@ function Clickeable({texto}) {
   return (
           
     <li className='clickeable'>
-            <a href='/'>{texto}</a>
+            <a>{texto}</a>
         </li>
     
   )

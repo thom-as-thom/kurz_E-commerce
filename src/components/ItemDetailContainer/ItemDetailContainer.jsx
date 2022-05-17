@@ -3,14 +3,15 @@ import { useParams } from 'react-router-dom'
 import BlendsList from '../../data/data.js'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import { useState, useEffect } from 'react'
+import Loading from '../loading/Loading.jsx'
 
 
 function ItemDetailContainer() {
 
-  const{ detailId } = useParams ()
+  const{ id } = useParams ()
   const getDetailedItem = new Promise((resolve)=>
   setTimeout(()=>{
-  const detailedItem =  BlendsList.find(blend => blend.id === detailId)
+  const detailedItem =  BlendsList.find(blend => blend.id === id)
   resolve (detailedItem)
   },2000)
   )
@@ -26,7 +27,7 @@ function ItemDetailContainer() {
   return (
     
       loading ? 
-      <h1>cargando...</h1>
+      <Loading/>
       :
       <ItemDetail name={detailedBlend.title} img={detailedBlend.imgUrl} price={detailedBlend.price} description={detailedBlend.description}/>
     

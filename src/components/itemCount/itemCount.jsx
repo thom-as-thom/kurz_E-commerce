@@ -30,7 +30,7 @@ function ItemCount({stock, initial, onAdd}) {
                     <input id='inputNum'  type="text"  max={stock} min='0' readOnly value={number}/>
                     <span className='buttonSpan' onClick={increase}> + </span>
                 </section>
-                    <button onClick={addToCart}>agregar al carrito</button>
+                    <button  onClick={addToCart}>agregar al carrito</button>
             </div>
         )
 }

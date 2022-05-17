@@ -1,6 +1,27 @@
 .itemlist{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-   
-
+}
+#categories{
+    display: grid;
+    grid-template-columns: 1fr 1fr 7fr;
+    
+}
+#categories h4{
+    text-decoration: none;
+    font-weight: 400;
+}
+.category{
+    background-color: var(--lightOrange);
+    border: 1.5px;
+    border-style: solid;
+    border-color: var(--mainOrange);   
+    margin: 0.1em;
+    border-radius: 5%;
+    padding: 0.2em 0.7em;
+    
+}
+.category:hover{
+    cursor: pointer;
+    border-color: var(--lightPurple);
 }

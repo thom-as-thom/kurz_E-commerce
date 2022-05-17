@@ -2,129 +2,130 @@
 const BlendsList = [
     {   
         id: '1',
-        title: "Tubo Remington",
+        title: " Remington",
         imgUrl: '../photos/blends/remington (2).jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té negro, Canela, Clavo de olor.",
-        
+        price: "$500" , 
+        description: "Té negro, Canela, Clavo de olor. 10g.",
+        category: "10 g"
     },
     {   
         id: '2',
-        title: "Tubo Cantata",
+        title: " Cantata",
         imgUrl: '../photos/blends/cantata (3).jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té verde, Manzanilla, Jazmín",
-        
+        price: "$500" , 
+        description: "Té verde, Manzanilla, Jazmín. 10g.",
+        category: "10 g"
     },
     {   
         id: '3',
-        title: "Tubo Fiesta Primaveral",
+        title: " Fiesta Primaveral",
         imgUrl: '../photos/blends/fiesta (2).jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té verde, Té rojo, Cardamomo, Lavanda"
-        
+        price: "$500" , 
+        description: "Té verde, Té rojo, Cardamomo, Lavanda. 10g.",
+        category: "10 g"    
     },
     {   
         id: '4',
-        title: "Tubo Claro de Luna",
+        title: " Claro de Luna",
         imgUrl: '../photos/blends/claro (2).jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té rojo, Cascarilla de cacao, Menta, Pimienta rosa.",
-        
+        price: "$500" , 
+        description: "Té rojo, Cascarilla de cacao, Menta, Pimienta rosa. 10g.",
+        category: "10 g"
     },
     {   
         id: '5',
-        title: "Tubo Ca-Chai",
+        title: " Ca-Chai",
         imgUrl: '../photos/blends/ca chai (2).jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té rojo, Hibiscus, Anís, Jengibre, pimienta rosa, Pimienta de Jamaica",        
+        price: "$500" , 
+        description: "Té rojo, Hibiscus, Anís, Jengibre, pimienta rosa, Pimienta de Jamaica. 10g.",  
+        category: "10 g"    
     },
     {   
         id: '6',
-        title: "Tubo No Limon",
+        title: " No Limón",
         imgUrl: '../photos/blends/nolimon.jpg',
-        price: 500 , 
-        description:"10 gramos de te en hebras orgánico certificado. Té verde, Cardamomom, Lemmon grass"        
-    },
+        price: "$500" , 
+        description:"Té verde, Cardamomom, Lemmon grass. 65g.",
+        category: "65 g"   },
     {   
         id: '7',
-        title: "Tubo 11 11",
+        title: " 11:11",
         imgUrl: '../photos/blends/11.11.jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té rojo, Anís, Lavanda"
-        
+        price: "$500" , 
+        description: "Té rojo, Anís, Lavanda. 65g.",
+        category: "65 g"    
     },
     {   
         id: '8',
-        title: "Tubo Flores del Sol",
+        title: " Flores del Sol",
         imgUrl: '../photos/blends/flores del sol.jpg',
-        price: 500 , 
-        description: "10 gramos de te en hebras orgánico certificado. Té verde, Caléndula, Manzanilla"
-        
+        price: "$500" , 
+        description: "Té verde, Caléndula, Manzanilla. 65g.",
+        category: "65 g"    
     },
     {   
         id: '9',
-        title: "Doypack Claro de Luna",
+        title: " Claro de Luna",
         imgUrl: '../photos/blends/claroluna.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té rojo, Cascarilla de cacao, Menta, Pimienta rosa." ,
-        
-    },
+        price: "$1500" , 
+        description: "Té rojo, Cascarilla de cacao, Menta, Pimienta rosa. 65g." ,
+        category: "65 g" 
+        },
     {   
-        id: '10',
-        title: "Doypack Cantata",
+        id: '65',
+        title: " Cantata",
         imgUrl: '../photos/blends/cantata.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té verde, Manzanilla, Jazmín" ,
-        
+        price: "$1500" , 
+        description: "Té verde, Manzanilla, Jazmín. 65g." ,
+        category: "65 g" 
     },
     {   
         id: '11',
-        title: "Doypack Ca-chai" ,
+        title: " Ca-chai" ,
         imgUrl: '../photos/blends/cacha.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té rojo, Hibiscus, Anís, Jengibre, pimienta rosa, Pimienta de Jamaica" ,
-        
+        price: "$1500" , 
+        description: "Té rojo, Hibiscus, Anís, Jengibre, pimienta rosa, Pimienta de Jamaica. 65g." ,
+        category: "65 g" 
     },
     {   
         id: '12',
-        title: "Doypack Remington" ,
+        title: " Remington" ,
         imgUrl: '../photos/blends/remin.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té negro, Canela, Clavo de olor." ,
-        
+        price: "$1500" , 
+        description: "Té negro, Canela, Clavo de olor. 65g." ,
+        category: "65 g" 
     },
     {   
         id: '13',
-        title: "Doypack Flores del Sol" ,
+        title: " Flores del Sol" ,
         imgUrl: '../photos/blends/flores del sol.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té verde, Caléndula, Manzanilla",
-        
+        price: "$1500" , 
+        description: "Té verde, Caléndula, Manzanilla. 65g.",
+        category: "65 g"
     },
     {   
         id: '14',
-        title: "Doypack 11 11" ,
+        title: " 11:11" ,
         imgUrl: '../photos/blends/11.11.jpg',
-        price: 1500 , 
-        description:  "65 gramos de te en hebras orgánico certificado. Té rojo, Anís, Lavanda" ,
-        
+        price: "$1500" , 
+        description:  "Té rojo, Anís, Lavanda. 65g." ,
+        category: "65 g" 
     },
     {   
         id: '15',
-        title: "Doypack No Limon" ,
+        title: " No Limón" ,
         imgUrl: '../photos/blends/nolimon.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té verde, Cardamomom, Lemmon grass" ,
-        
+        price: "$1500" , 
+        description: "Té verde, Cardamomom, Lemmon grass. 65g." ,
+        category: "65 g" 
     },
     {   
         id: '16',
-        title: "Doypack Fiesta Primaveral" ,
+        title: " Fiesta Primaveral" ,
         imgUrl: '../photos/blends/fiesta primaveral.jpg',
-        price: 1500 , 
-        description: "65 gramos de te en hebras orgánico certificado. Té verde, Té rojo, Cardamomo, Lavanda",
-        
+        price: "$1500" , 
+        description: "Té verde, Té rojo, Cardamomo, Lavanda. 65g.",
+        category: "65 g"
     }
 ]
 export default BlendsList

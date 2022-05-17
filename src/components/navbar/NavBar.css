@@ -6,9 +6,6 @@ ul{
     flex-direction: row;
     justify-content: space-evenly;
     justify-items: center ;
-
-    
-    
 }
 li{
     list-style: none;
@@ -17,3 +14,4 @@ li{
     background-color: var(--transparentWhitishCream);
     margin: 0.5em 0em;
 }
+
