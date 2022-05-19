@@ -5,7 +5,7 @@ function Clickeable({texto}) {
   return (
           
     <li className='clickeable'>
-            <a>{texto}</a>
+            <p>{texto}</p>
         </li>
     
   )

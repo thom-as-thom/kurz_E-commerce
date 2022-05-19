@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/itemList';
 import BlendsList from "../../data/data";
-import Selector from '../selector/selector';
 import { useParams } from 'react-router-dom';
 import Loading from '../loading/Loading';
 

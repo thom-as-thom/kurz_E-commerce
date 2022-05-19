@@ -8,7 +8,7 @@ cursor: pointer;
 opacity: 0.6;
 }
 
-.clickeable a {
+.clickeable p {
     text-decoration:none;
     font-weight: 500;
     font-size: 18px;

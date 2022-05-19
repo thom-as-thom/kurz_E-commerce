@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './itemCount.css'
 
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial, onAdd, buttonClick}) {
 
     const  [number, setNumber] = useState(initial)
     function increase(){
@@ -19,11 +19,14 @@ function ItemCount({stock, initial, onAdd}) {
         }
     }
     function addToCart (){
-            onAdd(number)
+        onAdd(number)
+        buttonClick()
     }
     
 
         return (
+
+
             <div className='centered'>
                 <section id='counter'>
                     <span className='buttonSpan' onClick={decrease} > - </span>
