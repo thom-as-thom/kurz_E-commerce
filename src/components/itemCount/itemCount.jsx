@@ -20,7 +20,7 @@ function ItemCount({stock, initial, onAdd, buttonClick}) {
     }
     function addToCart (){
         onAdd(number)
-        buttonClick()
+       
     }
     
 

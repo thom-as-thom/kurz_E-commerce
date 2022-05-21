@@ -2,10 +2,25 @@ import React from 'react'
 import ItemCount from '../itemCount/itemCount'
 import './ItemDetail.css'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 
 
 function ItemDetail({name, img, price, id, description }) {
   const [addedItems, setAddedItems] = useState(0)
+
+
+
+
+
+
+    const [inputType, setInputType ] = useState('preBuy')
+
+    const handleInter=()=>{
+        setInputType('afterBuy')
+    }
+  
+
   return (
     <div className='itemDetail'>
           <div className='detailImg'>
@@ -15,11 +30,26 @@ function ItemDetail({name, img, price, id, description }) {
               <h1>{name}</h1>
               <p>{description}</p>
               <div className='addToCart'>
-              <h3 className='price'>{price}</h3>
-              <ItemCount stock='5' initial='1' 
-              onAdd ={(amount)=>{
-              console.log (`compraste ${amount} de este producto`)
-              setAddedItems(amount)}}/>
+
+              <>
+                
+                  {inputType === "preBuy"? 
+                  <div>
+                    <h3 className='price'>{price}</h3>
+                    <ItemCount stock='5' initial='1' 
+                    onAdd ={handleInter}/>
+                  </div>
+                  :
+                  <div>
+                    <Link to='/catalogo'>
+                    <button >Seguir comprando</button>
+                    </Link>
+                    <Link to= '/cart'>
+                    <button>Ir al carrito</button>
+                    </Link>
+                  </div>
+                  }     
+              </>
               </div>
           </div>
     </div>
