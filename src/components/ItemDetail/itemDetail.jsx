@@ -16,7 +16,7 @@ function ItemDetail({name, img, price, id, description }) {
 
     const [inputType, setInputType ] = useState('preBuy')
 
-    const handleInter=()=>{
+    const buyEvent=()=>{
         setInputType('afterBuy')
     }
   
@@ -37,14 +37,14 @@ function ItemDetail({name, img, price, id, description }) {
                   <div>
                     <h3 className='price'>{price}</h3>
                     <ItemCount stock='5' initial='1' 
-                    onAdd ={handleInter}/>
+                    onAdd ={buyEvent}/>
                   </div>
                   :
                   <div>
                     <Link to='/catalogo'>
                     <button >Seguir comprando</button>
                     </Link>
-                    <Link to= '/cart'>
+                    <Link to='/cart'>
                     <button>Ir al carrito</button>
                     </Link>
                   </div>
