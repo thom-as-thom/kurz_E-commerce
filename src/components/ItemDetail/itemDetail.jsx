@@ -7,11 +7,6 @@ import { Link } from 'react-router-dom'
 
 
 function ItemDetail({name, img, price, id, description }) {
-  const [addedItems, setAddedItems] = useState(0)
-
-
-
-
 
 
     const [inputType, setInputType ] = useState('preBuy')
