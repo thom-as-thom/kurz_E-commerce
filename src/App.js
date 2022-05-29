@@ -6,14 +6,14 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import './style.css';
 import CartContext from './context/CartContext.jsx';
 import Cart from './components/cart/cart.jsx';
+import ContextProvider from './context/CartContext.jsx';
 
 export default function App() {
 
  
   return (
-    <>
+    <ContextProvider>
     <BrowserRouter>
-      
         < NavBar />
         
         <Routes>
@@ -29,6 +29,6 @@ export default function App() {
        </Routes>
 
     </BrowserRouter>
-    </>
+    </ContextProvider>
   );
 }
