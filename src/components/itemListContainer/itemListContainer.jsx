@@ -4,14 +4,14 @@ import ItemList from '../ItemList/itemList';
 import BlendsList from "../../data/data";
 import { useParams } from 'react-router-dom';
 import Loading from '../loading/Loading';
-import { useCartContext } from '../../context/CartContext';
+
 
 
 
 function ItemListContainer({greeting}) {
   const {cat} = useParams ()
   const [loading, setLoading] = useState(true)
-  const {saludar, saludo} = useCartContext()
+
   
 
   const getBlendsList = new Promise((resolve)=>{
@@ -35,9 +35,6 @@ function ItemListContainer({greeting}) {
  
   return (
     <section>
-      <button onClick={saludar}>
-        {saludo}
-      </button >
       {
          loading ?
           <Loading/>

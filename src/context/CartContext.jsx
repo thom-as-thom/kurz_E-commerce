@@ -8,13 +8,15 @@ export const useCartContext = () => useContext(CartContext)
 
 
 function ContextProvider({children}) {
-    const saludar = () => {
-        console.log('hola')
+   const [cart, setCart] = useState([]) 
+
+    const addToCart = (id, name, photo, price, qty) => {
+        setCart ( [...cart, {id, name, photo, price, qty }])
     }
-    const saludo = "hola"
+    
 
   return (
-    <CartContext.Provider value={{saludar, saludo}}>
+    <CartContext.Provider value={{addToCart, cart}}>
         {children}
     </CartContext.Provider>
   )

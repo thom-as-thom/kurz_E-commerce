@@ -1,0 +1,30 @@
+.cartItem-card{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--WhitishCream) ;
+    padding: 1em;
+    margin: 1em;
+
+  }
+.cartItemImg{
+    height: 15em;
+    width: 15em;
+    object-fit: cover;
+    padding-bottom: 1em;
+}
+.cartImgContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+} 
+.cartItem-card h1 {
+    color: var(--mainPurple);
+    padding-bottom: 1em;
+}
+.cartItem-card:hover{
+    opacity: 0.9;
+}

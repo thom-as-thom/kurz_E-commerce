@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './itemCount.css'
 
 
-function ItemCount({stock, initial, onAdd, buttonClick}) {
+function ItemCount({stock, initial, onAdd, id}) {
 
     const  [number, setNumber] = useState(initial)
     function increase(){

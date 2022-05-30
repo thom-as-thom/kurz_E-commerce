@@ -3,6 +3,7 @@ import ItemCount from '../itemCount/itemCount'
 import './ItemDetail.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../../context/CartContext'
 
 
 
@@ -10,10 +11,13 @@ function ItemDetail({name, img, price, id, description }) {
 
 
     const [inputType, setInputType ] = useState('preBuy')
+    const {addToCart} = useCartContext()
 
-    const buyEvent=()=>{
+    const buyEvent=(number)=>{
         setInputType('afterBuy')
+        addToCart(id, name, img, price, number)
     }
+
   
 
   return (
@@ -32,7 +36,7 @@ function ItemDetail({name, img, price, id, description }) {
                   <div>
                     <h3 className='price'>{price}</h3>
                     <ItemCount stock='5' initial='1' 
-                    onAdd ={buyEvent}/>
+                    onAdd = {buyEvent} id = {id}/>
                   </div>
                   :
                   <div>
