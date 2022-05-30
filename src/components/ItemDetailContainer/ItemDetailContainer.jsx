@@ -13,7 +13,7 @@ function ItemDetailContainer() {
   setTimeout(()=>{
   const detailedItem =  BlendsList.find(blend => blend.id === id)
   resolve (detailedItem)
-  },2000)
+  },100)
   )
   const [detailedBlend, setDetailedBlend] = useState({})
   const [loading, setloading] = useState(true)

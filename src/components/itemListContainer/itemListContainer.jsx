@@ -22,7 +22,7 @@ function ItemListContainer({greeting}) {
       :
         BlendsList   
         resolve( query )
-    }, 3000)
+    }, 100)
 })
   const [Blends, setBlends] = useState([])
   useEffect(() => {
