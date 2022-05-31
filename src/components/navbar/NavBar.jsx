@@ -33,7 +33,9 @@ function NavBar() {
            <Clickeable texto= 'presentacion 65g'/>
             </Link>
          <Clickeable texto='FAQ'/> 
+         <Link to='/cart'>
          <Clickeable texto={<CartWidget/>} />
+         </Link>
       </ul>
     </div>
     </nav>

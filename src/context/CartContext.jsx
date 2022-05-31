@@ -12,11 +12,15 @@ function ContextProvider({children}) {
   //funcion para agregar items al cart
       const [cart, setCart] = useState([]) 
       let cartProductAux = []  
-      // const [totalPrice, setTotalPrice] = 0
+      const [FinalPrice, setFinalPrice] = useState(0)
+      const [TotalQty, setTotalQty] = useState(0)
+            
+      
+
 
         const addToCart = (id, name, photo, price, qty) => {
-          // setTotalPrice (price*qty)
-          let cartProduct = {id, name, photo, price, qty, }
+          let totalprice = price*qty
+          let cartProduct = {id, name, photo, price, qty, totalprice}
           const isInCart = cart.findIndex(producto => producto.id === id) //is in cart corresponde al index del producto en caso de ser encontrado. de no encontrarlo devuelve -1
             if(isInCart === -1 )
             cartProductAux = [...cart, cartProduct] 
@@ -27,19 +31,28 @@ function ContextProvider({children}) {
               
             }
             setCart (cartProductAux)
+            setFinalPrice (FinalPrice + totalprice)
+            setTotalQty (TotalQty + cartProduct.qty)
 
           }
 
+
+
           const emptyCart = () => {
               setCart ([])
+              setFinalPrice (0)
+              setTotalQty (0)
            } 
+
+
 
            const deleteItem = (id) =>{
             
             const isInCart = cart.findIndex(producto => producto.id === id) //is in cart corresponde al index del producto en caso de ser encontrado. de no encontrarlo devuelve -1
+            setFinalPrice (FinalPrice - cart[isInCart].totalprice)
+            setTotalQty (TotalQty - cart[isInCart].qty)
             cart.splice(isInCart, 1)
-            console.log(cart)
-            console.log(isInCart)
+            
             cartProductAux = [...cart]
             setCart( cartProductAux)
            }
@@ -51,7 +64,9 @@ function ContextProvider({children}) {
       addToCart, 
       cart,
       emptyCart,
-      deleteItem
+      deleteItem,
+      FinalPrice,
+      TotalQty
       }}>
         {children}
     </CartContext.Provider>
