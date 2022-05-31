@@ -1,22 +1,31 @@
 import React from 'react';
 import './CartItem.css';
-import { Link } from 'react-router-dom';
+
+import { useCartContext } from '../../context/CartContext'
 
 
 function CartItem({imgUrl, id, title, price, qty, totalPrice}) {
+  const {deleteItem} = useCartContext();
+  function deleteI () {
+    deleteItem(id)
+  }
+
   return (
-    <Link to= {`/item/${id}`}>
+    
     <div className="cartItem-card">
-        <div className='cartImgContainer'>
-        <img className='cartItemImg' src={imgUrl} alt="" />
+        <div>
+          <div className='cartImgContainer'>
+          <img className='cartItemImg' src={imgUrl} alt="" />
+          </div>
         <h1>{title}</h1>
         </div>
-        <p>{price}</p>
-        <span>{qty}</span>
-        <p>{totalPrice}</p>
+        <p> Precio unitario <br/> ${price}</p>
+        <span>cantidad <br/> {qty}</span>
+        <p>total <br/> ${totalPrice}</p>
+      <button onClick = {deleteI}>x</button>
   
     </div>    
-    </Link>
+    
   )
 }
 

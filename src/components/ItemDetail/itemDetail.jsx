@@ -34,7 +34,7 @@ function ItemDetail({name, img, price, id, description }) {
                 
                   {inputType === "preBuy"? 
                   <div>
-                    <h3 className='price'>{price}</h3>
+                    <h3 className='price'>${price}</h3>
                     <ItemCount stock='5' initial='1' 
                     onAdd = {buyEvent} id = {id}/>
                   </div>

@@ -4,14 +4,14 @@
     text-align: center;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--WhitishCream) ;
-    padding: 1em;
-    margin: 1em;
+    background-color: var(--lightOrange) ;
+    padding: 2em;
+    margin-bottom: 2em;
 
   }
 .cartItemImg{
-    height: 15em;
-    width: 15em;
+    height: 5em;
+    width: 5em;
     object-fit: cover;
     padding-bottom: 1em;
 }
@@ -22,8 +22,9 @@
     justify-content: space-around;
 } 
 .cartItem-card h1 {
-    color: var(--mainPurple);
+    color: var(--whitishCream);
     padding-bottom: 1em;
+    font-size: large;
 }
 .cartItem-card:hover{
     opacity: 0.9;
