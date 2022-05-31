@@ -9,6 +9,7 @@ function CartItem({imgUrl, id, title, price, qty, totalPrice}) {
   function deleteI () {
     deleteItem(id)
   }
+  
 
   return (
     
