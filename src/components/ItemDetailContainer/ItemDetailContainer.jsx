@@ -17,7 +17,7 @@ function ItemDetailContainer() {
     const dbQry = doc(db, 'productos', 'RcQokrxc5wVog9rqCkiH')
     getDoc (dbQry)
     .then(resp => setProducto({id: resp.id, ...resp.data()}))
-  })
+  },[])
  console.log(producto)
   const getDetailedItem = new Promise((resolve)=>
   setTimeout(()=>{
