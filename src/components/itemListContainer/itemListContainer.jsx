@@ -24,13 +24,13 @@ function ItemListContainer({greeting}) {
     const db = getFirestore()
     const qryCollection = collection(db, 'productos')
     getDocs (qryCollection)
-    // .then (resp => setBlendsList(resp.docs.map( item => ({id: item.id, ...item.data()}))))
-    // .then( cat ?
-    //   setBlends(BlendsList.filter(prods => prods.category == cat))
-    //   :
-    //   setBlends(BlendsList)
-    //   )
+      .then (resp => setBlendsList(resp.docs.map( item => ({id: item.id, ...item.data()}))))
       .then (resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
+     .then( cat ?
+       setBlends(BlendsList.filter(prods => prods.category === cat))
+       :
+       setBlends(BlendsList)
+       )
       .catch((err)=>console.log(err))
       .finally(()=>setLoading(false))
     },[cat])
