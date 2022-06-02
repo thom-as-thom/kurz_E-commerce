@@ -8,33 +8,35 @@ import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
 
 function ItemDetailContainer() {
-
+  
   const{ id } = useParams ()
   const [producto, setProducto] = useState({})
-
-  useEffect(()=>{
-    const db = getFirestore()
-    const dbQry = doc(db, 'productos', 'RcQokrxc5wVog9rqCkiH')
-    getDoc (dbQry)
-    .then(resp => setProducto({id: resp.id, ...resp.data()}))
-  })
- console.log(producto)
- 
-  const getDetailedItem = new Promise((resolve)=>
-  setTimeout(()=>{
-  const detailedItem =  BlendsList.find(blend => blend.id === id)
-  resolve (detailedItem)
-  },100)
-  )
   const [detailedBlend, setDetailedBlend] = useState({})
   const [loading, setloading] = useState(true)
-
-  useEffect(() => {
-    getDetailedItem
-    .then(respuesta =>setDetailedBlend(respuesta))
+  
+  useEffect(()=>{
+    const db = getFirestore()
+    const dbQry = doc(db, 'productos', id)
+    getDoc (dbQry)
+    .then(resp => setDetailedBlend({id: resp.id, ...resp.data()}))
     .catch((err)=>console.log(err))
-    .finally(()=>setloading(false))
-  }, [])
+    .finally(setloading(false))
+  })
+ 
+ 
+  // const getDetailedItem = new Promise((resolve)=>
+  // setTimeout(()=>{
+  // const detailedItem =  BlendsList.find(blend => blend.id === id)
+  // resolve (detailedItem)
+  // },100)
+  // )
+
+  // useEffect(() => {
+  //   getDetailedItem
+  //   .then(respuesta =>setDetailedBlend(respuesta))
+  //   .catch((err)=>console.log(err))
+  //   .finally(()=>setloading(false))
+  // }, [])
   return (
     
       loading ? 
