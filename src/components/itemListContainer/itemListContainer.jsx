@@ -18,17 +18,19 @@ function ItemListContainer({greeting}) {
   const [BlendsList, setBlendsList] = useState([])
 
 
+  
   useEffect(()=>{
     setLoading(true)
     const db = getFirestore()
     const qryCollection = collection(db, 'productos')
     getDocs (qryCollection)
-    
-    .then(cat?
-      resp => setBlends(resp.docs.filter.map( item => ({id: item.id, ...item.data()})))
-      :
-      resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
-    
+    // .then (resp => setBlendsList(resp.docs.map( item => ({id: item.id, ...item.data()}))))
+    // .then( cat ?
+    //   setBlends(BlendsList.filter(prods => prods.category == cat))
+    //   :
+    //   setBlends(BlendsList)
+    //   )
+      .then (resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
       .catch((err)=>console.log(err))
       .finally(()=>setLoading(false))
     },[cat])
