@@ -1,22 +1,23 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/itemList';
-// import BlendsList from "../../data/data";
+import BlendsList from "../../data/data";
 import { useParams } from 'react-router-dom';
 import Loading from '../loading/Loading';
+<<<<<<< HEAD
 import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+=======
+import {doc, getDoc, getFirestore} from 'firebase/firestore'
+>>>>>>> parent of 51ecada (rendering components from db but yet havent find a way to filter them)
 
 
 
 
 function ItemListContainer({greeting}) {
-
   const {cat} = useParams ()
   const [loading, setLoading] = useState(true)
-  const [Blends, setBlends] = useState([])
-  const [productos, setProductos] = useState([]) 
-  const [BlendsList, setBlendsList] = useState([])
 
+<<<<<<< HEAD
 
 //   useEffect(() => {
 //     const db = getFirestore()
@@ -78,8 +79,27 @@ function ItemListContainer({greeting}) {
   //    .catch((err)=>console.log(err))
   //    .finally(()=>setLoading(false))
   //  }, [cat])
+=======
+   const getBlendsList = new Promise((resolve)=>{
+    
+     setTimeout(()=>{
+       const query = cat ? 
+         BlendsList.filter(prods => prods.category === cat)
+       :
+         BlendsList   
+         resolve( query )
+     }, 100)
+ })
+   const [Blends, setBlends] = useState([])
+   useEffect(() => {
+     setLoading(true)
+     getBlendsList
+     .then(respuesta =>setBlends(respuesta))
+     .catch((err)=>console.log(err))
+     .finally(()=>setLoading(false))
+   }, [cat])
+>>>>>>> parent of 51ecada (rendering components from db but yet havent find a way to filter them)
  
-  
   return (
     <section>
       {
