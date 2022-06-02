@@ -19,6 +19,7 @@ function ItemDetailContainer() {
     .then(resp => setProducto({id: resp.id, ...resp.data()}))
   },[])
  console.log(producto)
+ 
   const getDetailedItem = new Promise((resolve)=>
   setTimeout(()=>{
   const detailedItem =  BlendsList.find(blend => blend.id === id)
