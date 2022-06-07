@@ -9,7 +9,7 @@ function CartWidget() {
   return (
     <div className= {TotalQty>0 ? "display" : "noDisplay"}>
     <p>{TotalQty}</p>
-    <ImCart/>
+      <ImCart/>
     </div>
   )
 }

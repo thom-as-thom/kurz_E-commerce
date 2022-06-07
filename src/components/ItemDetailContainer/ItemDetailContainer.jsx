@@ -21,7 +21,7 @@ function ItemDetailContainer() {
     .then(resp => setDetailedBlend({id: resp.id, ...resp.data()}))
     .catch((err)=>console.log(err))
     .finally(setloading(false))
-  })
+  },[id])
  
  
   // const getDetailedItem = new Promise((resolve)=>

@@ -14,10 +14,6 @@ function ItemListContainer({greeting}) {
   const {cat} = useParams ()
   const [loading, setLoading] = useState(true)
   const [Blends, setBlends] = useState([])
-  const [productos, setProductos] = useState([]) 
-  const [BlendsList, setBlendsList] = useState([])
-
-
   
   useEffect(()=>{
     setLoading(true)
@@ -27,7 +23,6 @@ function ItemListContainer({greeting}) {
     const qryCollectionFilter = query( qryCollection, where('category', '==', cat))
             getDocs(qryCollectionFilter)
 
- 
       .then (resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
       .catch((err)=>console.log(err))
       .finally(()=>setLoading(false))
@@ -44,11 +39,10 @@ function ItemListContainer({greeting}) {
     return (
     <section>
       {
-         loading ?
+        loading ?
           <Loading/>
           :
           <div>
-           
             <ItemList products= {Blends} />
           </div>
       }
