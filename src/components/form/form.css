@@ -1,0 +1,6 @@
+.disabled{
+    background-color: black;
+}
+.disabled:hover{
+    cursor:auto;
+}

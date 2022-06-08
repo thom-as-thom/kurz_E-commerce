@@ -7,16 +7,17 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import Form from '../form/form'
 
 
+
 function Cart() {
   const { cart, emptyCart, FinalPrice } = useCartContext()
   const [orderSent, setOrderSent] = useState();
-  const [user, setUser] = useState({ fullName: '', email: '', phoneNumber: '' })
-    const handleChange = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value });
-    }
-    const handleSubmit = (event) => {
-        event.preventDefault()
-    }
+  const [user, setUser] = useState({ fullName: false , email: false , phoneNumber: false })
+  const handleChange = (event) => {
+      setUser({ ...user, [event.target.name]: event.target.value });
+  }
+  const handleSubmit = (event) => {
+      event.preventDefault()
+  }
 
   
   function GenerateBuyOrder() {
@@ -49,16 +50,8 @@ function Cart() {
               total: $ {FinalPrice}
             </div>
             <button onClick={emptyCart}> VACIAR CARRITO </button>
-            <form onSubmit={handleSubmit}>
-            <label htmlFor="fullName">Full Name</label>
-            <input type="text" name="fullName" onChange={handleChange}>
-            </input><label htmlFor="email">Email</label>
-            <input type="text" name="email" onChange={handleChange}></input>
-            <label htmlFor="phoneNumber"> Phone Number </label>
-            <input type="text" name="phoneNumber" onChange={handleChange}></input>
-            <button onClick={GenerateBuyOrder}>FINALIZAR COMPRA</button>
-        </form>
-            </div>
+            <Form user={user} GenerateBuyOrder={GenerateBuyOrder} handleChange={handleChange} handleSubmit={handleSubmit} />
+        </div>
       : 
           <div className='cart'> 
             <h1>El carrito esta vacio</h1>
