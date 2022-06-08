@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import BlendsList from '../../data/data.js'
 import ItemDetail from '../ItemDetail/itemDetail.jsx'
 import { useState, useEffect } from 'react'
 import Loading from '../loading/Loading.jsx'
@@ -10,7 +9,6 @@ import {doc, getDoc, getFirestore} from 'firebase/firestore'
 function ItemDetailContainer() {
   
   const{ id } = useParams ()
-  const [producto, setProducto] = useState({})
   const [detailedBlend, setDetailedBlend] = useState({})
   const [loading, setloading] = useState(true)
   

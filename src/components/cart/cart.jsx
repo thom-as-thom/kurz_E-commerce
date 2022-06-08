@@ -1,13 +1,15 @@
-import {React} from 'react'
+import {React, useState} from 'react'
 import { useCartContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import './cart.css'
 import { Link } from 'react-router-dom'
-import {addDoc, collection, getFirestore} from 'firebase/firestore'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 
 function Cart() {
   const { cart, emptyCart, FinalPrice } = useCartContext()
+  const [orderSent, setOrderSent] = useState('El carrito esta vacio. por que no compras algo?');
+
   
   function GenerateBuyOrder() {
     let order = {}
@@ -23,16 +25,16 @@ function Cart() {
     const queryCollection = collection(db, 'orders')
     addDoc(queryCollection, order)
       .then(resp => console.log(resp))
+      .then(resp => setOrderSent(resp.id))
       .catch(err => console.log(err))
       .finally (emptyCart)
   }
 
-
   return (
-    (cart.length > 0 ) ? 
+    (cart.length > 0) ? 
+    
       <div className='cart'>
         {cart.map((prod)=> <CartItem key={prod.id} id={prod.id} title={prod.name} imgUrl={prod.photo} price={prod.price} qty={prod.qty} totalPrice={prod.totalprice}/>)}
-
           <div> 
             total: $ {FinalPrice}
           </div>
@@ -41,11 +43,12 @@ function Cart() {
         </div>
     : 
         <div className='cart'> 
-          <h1>El carrito esta vacio. Por que no compras algo?</h1>
+          <h1>{orderSent}</h1>
           <Link to='/catalogo'>
           <button>Ir a comprar</button>
           </Link>
-        </div>
+      </div>
+  
   )
 
 
