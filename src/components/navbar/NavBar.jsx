@@ -13,29 +13,30 @@ import { Link } from 'react-router-dom';
 function NavBar() {
 
   return (
-   <nav> <Link to='/'>
-    <div className='logo'>
-      <Logo/>
-    </div>
-   </Link> 
+    <nav>
+      <Link to='/'>
+        <div className='logo'>
+          <Logo/>
+        </div>
+      </Link> 
     <div id='itemContainer'>
       <ul>
         <Link to='/'>
         <Clickeable texto={< ImHome3 />}/> 
         </Link> 
-         <Link to='/catalogo'>
-         <Clickeable className="productos" texto= 'PRODUCTOS'/>
-         </Link>
-         <Link to='/category/10 g'>
+          <Link to='/catalogo'>
+          <Clickeable className="productos" texto= 'PRODUCTOS'/>
+          </Link>
+          <Link to='/category/10 g'>
             <Clickeable texto= 'presentacion 10g'/>
             </Link>
             <Link to='/category/65 g'>
-           <Clickeable texto= 'presentacion 65g'/>
+            <Clickeable texto= 'presentacion 65g'/>
             </Link>
-         <Clickeable texto='FAQ'/> 
-         <Link to='/cart'>
-         <Clickeable texto={<CartWidget/>} />
-         </Link>
+          <Clickeable texto='FAQ'/> 
+          <Link to='/cart'>
+          <Clickeable texto={<CartWidget/>} />
+          </Link>
       </ul>
     </div>
     </nav>

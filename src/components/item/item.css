@@ -4,14 +4,15 @@
     padding: 1em;
     margin: 1em;
 
-  }
+}
 .itemImg{
     height: 15em;
     width: 15em;
     object-fit: cover;
-    padding-bottom: 1em;
+    background-color: var(--lighterPurple);
 }
 .imgContainer{
+    padding-bottom: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
