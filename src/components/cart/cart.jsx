@@ -8,7 +8,7 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 function Cart() {
   const { cart, emptyCart, FinalPrice } = useCartContext()
-  const [orderSent, setOrderSent] = useState('El carrito esta vacio. por que no compras algo?');
+  const [orderSent, setOrderSent] = useState();
 
   
   function GenerateBuyOrder() {
@@ -24,31 +24,33 @@ function Cart() {
     const db = getFirestore()
     const queryCollection = collection(db, 'orders')
     addDoc(queryCollection, order)
-      .then(resp => console.log(resp))
       .then(resp => setOrderSent(resp.id))
       .catch(err => console.log(err))
       .finally (emptyCart)
   }
 
   return (
-    (cart.length > 0) ? 
+    orderSent ?
+      <h1>El id de tu pedidos es {orderSent}. Gracias por tu compra </h1>
+      :
+        (cart.length > 0) ? 
     
-      <div className='cart'>
-        {cart.map((prod)=> <CartItem key={prod.id} id={prod.id} title={prod.name} imgUrl={prod.photo} price={prod.price} qty={prod.qty} totalPrice={prod.totalprice}/>)}
-          <div> 
-            total: $ {FinalPrice}
+        <div className='cart'>
+          {cart.map((prod)=> <CartItem key={prod.id} id={prod.id} title={prod.name} imgUrl={prod.photo} price={prod.price} qty={prod.qty} totalPrice={prod.totalprice}/>)}
+            <div> 
+              total: $ {FinalPrice}
+            </div>
+            <button onClick={emptyCart}> VACIAR CARRITO </button>
+            <button onClick={GenerateBuyOrder}>FINALIZAR COMPRA</button>
+            </div>
+      : 
+          <div className='cart'> 
+            <h1>El carrito esta vacio</h1>
+            <Link to='/catalogo'>
+            <button>Ir a comprar</button>
+            </Link>
           </div>
-          <button onClick={emptyCart}> VACIAR CARRITO </button>
-          <button onClick={GenerateBuyOrder}>FINALIZAR COMPRA</button>
-        </div>
-    : 
-        <div className='cart'> 
-          <h1>{orderSent}</h1>
-          <Link to='/catalogo'>
-          <button>Ir a comprar</button>
-          </Link>
-      </div>
-  
+    
   )
 
 
