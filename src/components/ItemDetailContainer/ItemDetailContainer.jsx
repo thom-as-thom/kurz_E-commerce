@@ -20,21 +20,7 @@ function ItemDetailContainer() {
     .catch((err)=>console.log(err))
     .finally(setloading(false))
   },[id])
- 
- 
-  // const getDetailedItem = new Promise((resolve)=>
-  // setTimeout(()=>{
-  // const detailedItem =  BlendsList.find(blend => blend.id === id)
-  // resolve (detailedItem)
-  // },100)
-  // )
 
-  // useEffect(() => {
-  //   getDetailedItem
-  //   .then(respuesta =>setDetailedBlend(respuesta))
-  //   .catch((err)=>console.log(err))
-  //   .finally(()=>setloading(false))
-  // }, [])
   return (
     
       loading ? 
