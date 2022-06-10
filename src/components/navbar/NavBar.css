@@ -1,11 +1,6 @@
 nav{
     background-image: url(/public/photos/04-1.jpg);
-}
-ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    justify-items: center ;
+    width: 100%;
 }
 li{
     list-style: none;
@@ -14,4 +9,38 @@ li{
     background-color: var(--transparentWhitishCream);
     margin: 0.5em 0em;
 }
+h1{
+    color: var(--mainPurple);
+    align-self: center;
+    justify-self: center;
+    padding: 5%;
+}
 
+@media (orientation:landscape){
+    .menu{
+        display: none;
+    }
+    .inactive{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        justify-items: center ;
+    }
+    .active{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        justify-items: center;
+    }
+}
+@media (orientation: portrait) {
+    .active{
+        display: block;
+        flex-direction: row;
+        justify-content: space-evenly;
+        justify-items: center;
+    }
+    .inactive{
+        display: none;
+    }
+}

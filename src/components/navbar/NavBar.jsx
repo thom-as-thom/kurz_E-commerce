@@ -1,17 +1,22 @@
-import React from 'react';
+import {React, useState} from 'react';
 import './NavBar.css';
 import Clickeable from '../clickeable/clickeable.jsx';
 import Logo from '../logo/logo';
 import CartWidget from '../cartWidget/cartWidget';
 import { ImHome3 } from "react-icons/im";
 import { Link } from 'react-router-dom';
+import { ImMenu } from "react-icons/im";
 
 
 
 
 
 function NavBar() {
-
+  const [IsClicked, setIsClicked] = useState(false);
+  
+  function click() {
+      setIsClicked(!IsClicked)
+    }
   return (
     <nav>
       <Link to='/'>
@@ -20,24 +25,25 @@ function NavBar() {
         </div>
       </Link> 
     <div id='itemContainer'>
-      <ul>
-        <Link to='/'>
-        <Clickeable texto={< ImHome3 />}/> 
+          <h1 onClick={click} className='menu'><ImMenu/></h1>
+        <ul className={IsClicked ? "active" : "inactive"}>
+        <Link onClick={click}  to='/'>
+            <Clickeable  texto={< ImHome3 />}/> 
         </Link> 
-          <Link to='/catalogo'>
-          <Clickeable className="productos" texto= 'PRODUCTOS'/>
+          <Link onClick={click} to='/catalogo'>
+          <Clickeable  texto= 'PRODUCTOS'/>
           </Link>
-          <Link to='/category/10 g'>
-            <Clickeable texto= 'presentacion 10g'/>
+          <Link onClick={click} to='/category/10 g'>
+            <Clickeable  texto= 'presentacion 10g'/>
             </Link>
-            <Link to='/category/65 g'>
-            <Clickeable texto= 'presentacion 65g'/>
+            <Link onClick={click} to='/category/65 g'>
+            <Clickeable  texto= 'presentacion 65g'/>
             </Link>
-          <Clickeable texto='FAQ'/> 
-          <Link to='/cart'>
+          <Clickeable  texto='FAQ'/> 
+          <Link onClick={click} to='/cart'>
           <Clickeable texto={<CartWidget/>} />
           </Link>
-      </ul>
+        </ul>
     </div>
     </nav>
   
