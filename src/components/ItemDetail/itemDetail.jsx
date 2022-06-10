@@ -23,7 +23,7 @@ function ItemDetail({name, img, price, id, description }) {
   return (
     <div className='itemDetail'>
           <div className='detailImg'>
-             <img className='itemDetailImg' src={img} alt="this is an image" />
+             <img className='itemDetailImg' src={img} alt="product" />
           </div>
           <div className='detailText'>
               <h1>{name}</h1>
