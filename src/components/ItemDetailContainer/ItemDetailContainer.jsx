@@ -12,7 +12,8 @@ function ItemDetailContainer() {
   const [detailedBlend, setDetailedBlend] = useState({})
   const [loading, setloading] = useState(true)
   
-  useEffect(()=>{
+  useEffect(() => {
+    setloading(true)
     const db = getFirestore()
     const dbQry = doc(db, 'productos', id)
     getDoc (dbQry)
