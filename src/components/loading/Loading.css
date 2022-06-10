@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-around;
     align-content: space-around;
-    animation: myfirst 5s 2;
+    animation: myfirst 100s 2;
     animation-direction:normal;
   }
   
