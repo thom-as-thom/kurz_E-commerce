@@ -1,8 +1,8 @@
 import {React, useState} from 'react'
 import { useCartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 import CartItem from '../CartItem/CartItem'
 import './cart.css'
-import { Link } from 'react-router-dom'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import Form from '../form/form'
 
@@ -11,7 +11,8 @@ import Form from '../form/form'
 function Cart() {
   const { cart, emptyCart, FinalPrice } = useCartContext()
   const [orderSent, setOrderSent] = useState();
-  const [user, setUser] = useState({ fullName: false , email: false , phoneNumber: false })
+  const [user, setUser] = useState({ fullName: false , email: false , phoneNumber: false, password: false })
+  
   const handleChange = (event) => {
       setUser({ ...user, [event.target.name]: event.target.value });
   }
@@ -25,7 +26,6 @@ function Cart() {
 
 today = dd + '/' + mm + '/' + yyyy;
 
-  
   function GenerateBuyOrder() {
     let order = {}
     order.buyer = { user }
@@ -56,7 +56,8 @@ today = dd + '/' + mm + '/' + yyyy;
             <div> 
               total: $ {FinalPrice}
             </div>
-            <button onClick={emptyCart}> VACIAR CARRITO </button>
+          <button onClick={emptyCart}> VACIAR CARRITO </button>
+          
             <Form user={user} GenerateBuyOrder={GenerateBuyOrder} handleChange={handleChange} handleSubmit={handleSubmit} />
         </div>
       : 
