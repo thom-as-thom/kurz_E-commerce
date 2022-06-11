@@ -2,13 +2,13 @@ import React from 'react'
 import './clickeable.css'
 
 function Clickeable({texto}) {
-  return (
-          
+return (
+
     <li className='clickeable'>
-            {texto}
-        </li>
+        {texto}
+    </li>
     
-  )
+)
 }
 
 export default Clickeable

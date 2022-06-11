@@ -20,7 +20,6 @@ function ItemCount({stock, initial, onAdd, id}) {
     }
     function addToCart (){
         onAdd(number)
-       
     }
     
 

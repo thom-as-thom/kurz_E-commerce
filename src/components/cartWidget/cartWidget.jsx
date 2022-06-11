@@ -4,14 +4,14 @@ import './cartWidget.css'
 import { useCartContext } from "../../context/CartContext";
 
 function CartWidget() {
-  const{TotalQty} = useCartContext()
-    
-  return (
+const{TotalQty} = useCartContext()
+
+return (
     <div className= {TotalQty>0 ? "display" : "noDisplay"}>
-    <p>{TotalQty}</p>
-      <ImCart/>
+        <p>{TotalQty}</p>
+        <ImCart/>
     </div>
-  )
+)
 }
 
 export default CartWidget
