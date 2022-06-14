@@ -21,11 +21,14 @@ function CartItem({imgUrl, id, title, price, qty, totalPrice}) {
         <div className="cartItem-card">
             <div>
                 <div className='cartImgContainer'>
-                    <img className='cartItemImg' src={imgUrl} alt="" />
+                    <img className='cartItemImg' src={imgUrl} alt=""
+                    />
                 </div>
-                <h1>{title}</h1>
             </div>
+            <div>
+            <h1>{title}</h1>
             <ItemCount initial={qty} stock={5} onChange={onChange}/>
+            </div>
             <p> ${totalPrice}</p>
             <button onClick = {deleteI}>x</button>
 

@@ -4,3 +4,12 @@
 .disabled:hover{
     cursor:auto;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
+form input{
+    margin: 1% 25%;
+}
