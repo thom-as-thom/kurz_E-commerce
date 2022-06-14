@@ -17,11 +17,11 @@ function ItemDetail({ name, img, price, id, description }) {
     }, 1500);
 
     const [inputType, setInputType ] = useState('preBuy')
-    const {addToCart} = useCartContext()
+    const {cartModification} = useCartContext()
 
     const buyEvent=(number)=>{
         setInputType('afterBuy')
-        addToCart(id, name, img, price, number)
+        cartModification(id, name, img, price, number)
     }
 
 
