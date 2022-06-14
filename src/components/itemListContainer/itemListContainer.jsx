@@ -16,27 +16,20 @@ const [loading, setLoading] = useState(true)
 const [Blends, setBlends] = useState([])
 
 
-                                                            //aca hay que arreglar los if, codigo repetido
-
-useEffect(()=>{
+    
+    
+    useEffect(()=>{
     setLoading(true)
-    const db = getFirestore()
-    if (cat){
+        const db = getFirestore()
         const qryCollection = collection(db, 'productos')
-        const qryCollectionFilter = query( qryCollection, where('category', '==', cat))
-            getDocs(qryCollectionFilter)
-
-            .then (resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
-            .catch((err)=>console.log(err))
-            .finally(()=>setLoading(false))
-    }
-    else{
-        const qryCollection = collection(db, 'productos')
-            getDocs(qryCollection)
-            .then (resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
-            .catch((err)=>console.log(err))
-            .finally(()=>setLoading(false))
-    }
+        let qryCollectionFilter = qryCollection
+        if (cat) {
+            qryCollectionFilter = query(qryCollection, where('category', '==', cat))
+        }
+        getDocs(qryCollectionFilter)
+        .then (resp => setBlends(resp.docs.map( item => ({id: item.id, ...item.data()}))))
+        .catch((err)=>console.log(err))
+        .finally(()=>setLoading(false))
     },[cat])
     
     return (
