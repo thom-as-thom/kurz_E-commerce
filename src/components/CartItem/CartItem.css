@@ -1,9 +1,8 @@
 .cartItem-card{
-    display: flex;
-    flex-direction: row;
+    display: grid;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: var(--lightOrange) ;
     padding: 2em;
     margin-bottom: 2em;
@@ -33,4 +32,11 @@
     background-color: var(--whitishCream);
     padding: 0em 1em;
 
+}
+
+@media (orientation:landscape){
+    .cartItem-card{
+        grid-template-columns: 5fr 1fr 1fr 1fr;
+        column-gap: 15%;
+    }
 }

@@ -2,15 +2,20 @@ import React from 'react';
 import './CartItem.css';
 
 import { useCartContext } from '../../context/CartContext'
+import ItemCount from '../itemCount/itemCount';
 
 
 function CartItem({imgUrl, id, title, price, qty, totalPrice}) {
-    const {deleteItem} = useCartContext();
+    const {deleteItem, cartModification} = useCartContext();
     function deleteI () {
         deleteItem(id)
     }
 
-
+    function onChange(n) {
+        cartModification(id,title,imgUrl,price,n)
+    }
+    
+        
     return (
         
         <div className="cartItem-card">
@@ -20,7 +25,7 @@ function CartItem({imgUrl, id, title, price, qty, totalPrice}) {
                 </div>
                 <h1>{title}</h1>
             </div>
-            <span> {qty}</span>
+            <ItemCount initial={qty} stock={5} onChange={onChange}/>
             <p> ${totalPrice}</p>
             <button onClick = {deleteI}>x</button>
 
