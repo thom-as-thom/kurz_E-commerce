@@ -5,10 +5,18 @@ import CartItem from '../CartItem/CartItem'
 import './cart.css'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import Form from '../form/form'
+import Loading from '../loading/Loading'
 
 
 
 function Cart() {
+    const [loading, setLoading] = useState(true);
+    
+    setTimeout(() => {
+        setLoading(false)
+        
+    }, 1500);
+
     const { cart, emptyCart, FinalPrice } = useCartContext()
     const [orderSent, setOrderSent] = useState();
     const [user, setUser] = useState({ fullName: false , email: false , phoneNumber: false, password: false })
@@ -23,9 +31,9 @@ function Cart() {
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); 
     let yyyy = today.getFullYear();
-
+    
     today = dd + '/' + mm + '/' + yyyy;
-
+    
     function GenerateBuyOrder() {
         let order = {}
         order.buyer = { user }
@@ -46,6 +54,9 @@ function Cart() {
     }
 
     return (
+        loading ? 
+            <Loading/>
+            :
         orderSent ?
             <h1>Gracias por tu compra {user.fullName}.<br/> El id de tu pedidos es {orderSent}.<br/> Te estaremos enviando la facturacion a {user.email} </h1>
         :

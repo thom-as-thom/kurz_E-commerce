@@ -17,8 +17,9 @@
     display: flex;
     justify-content: space-around;
     align-content: space-around;
-    animation: myfirst 100s 2;
-    animation-direction:normal;
+    animation: myfirst 5s 2;
+    animation-direction:alternate;
+    animation-iteration-count: infinite;
   }
   
   @keyframes myfirst {
