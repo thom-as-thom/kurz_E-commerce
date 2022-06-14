@@ -14,11 +14,15 @@ function ContextProvider({children}) {
     let cartProductAux = []  
     const [FinalPrice, setFinalPrice] = useState(0)
     const [TotalQty, setTotalQty] = useState(0)
-            
+    function changeState(cart, prodQty, totalQty) {
+        setCart (cart)
+        setFinalPrice (prodQty)
+        setTotalQty (totalQty )
+    }
     
 
 
-    const addToCart = (id, name, photo, price, qty) => {
+    const cartModification = (id, name, photo, price, qty) => {
         let totalprice = price*qty
         let cartProduct = {id, name, photo, price, qty, totalprice}
         const isInCart = cart.findIndex(producto => producto.id === id) //is in cart corresponde al index del producto en caso de ser encontrado. de no encontrarlo devuelve -1
@@ -26,22 +30,17 @@ function ContextProvider({children}) {
                 cartProductAux = [...cart, cartProduct] 
             else {
                 cartProduct = cart[isInCart]
-                cartProduct.qty = cartProduct.qty+qty;
+                cartProduct.qty = cartProduct.qty + qty;
+                cartProduct.totalprice = cartProduct.price * cartProduct.qty
                 cartProductAux = [...cart]
             
             }
-            setCart (cartProductAux)
-            setFinalPrice (FinalPrice + totalprice)
-            setTotalQty (TotalQty + cartProduct.qty)
-
+            changeState(cartProductAux, FinalPrice + totalprice, TotalQty + qty)
         }
+        
 
-
-
-        const emptyCart = () => {
-            setCart ([])
-            setFinalPrice (0)
-            setTotalQty (0)
+    const emptyCart = () => {
+            changeState([], 0, 0)
         } 
 
 
@@ -61,7 +60,7 @@ function ContextProvider({children}) {
 
     return (
         <CartContext.Provider value={{
-            addToCart, 
+            cartModification,
             cart,
             emptyCart,
             deleteItem,
