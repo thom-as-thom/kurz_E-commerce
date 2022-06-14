@@ -8,7 +8,7 @@
     padding: 2em;
     margin-bottom: 2em;
 
-  }
+}
 .cartItemImg{
     height: 5em;
     width: 5em;
@@ -28,4 +28,9 @@
 }
 .cartItem-card:hover{
     opacity: 0.9;
+}
+.cartItem-card p, span{
+    background-color: var(--whitishCream);
+    padding: 0em 1em;
+
 }

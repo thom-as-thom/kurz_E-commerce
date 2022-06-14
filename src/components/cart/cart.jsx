@@ -58,23 +58,25 @@ function Cart() {
             <Loading/>
             :
         orderSent ?
-            <h1>Gracias por tu compra {user.fullName}.<br/> El id de tu pedidos es {orderSent}.<br/> Te estaremos enviando la facturacion a {user.email} </h1>
+            <h1 id='Buyed'>Gracias por tu compra {user.fullName}.<br/> El id de tu pedidos es {orderSent}.<br/> Te estaremos enviando la facturacion a {user.email} </h1>
         :
             (cart.length > 0) ? 
         
                 <div className='cart'>
                 {cart.map((prod)=> <CartItem key={prod.id} id={prod.id} title={prod.name} imgUrl={prod.photo} price={prod.price} qty={prod.qty} totalPrice={prod.totalprice}/>)}
-                    <div> 
-                    total: $ {FinalPrice}
-                    </div>
-                    <button onClick={emptyCart}> VACIAR CARRITO </button>
+                        <div id='spanButton'>
+                            <span id='totalPrice'> 
+                            total: $ {FinalPrice}
+                            </span>
+                            <button onClick={emptyCart}> VACIAR CARRITO </button>
+                        </div>
                     <Form user={user} GenerateBuyOrder={GenerateBuyOrder} handleChange={handleChange} handleSubmit={handleSubmit} />
                 </div>
         : 
             <div className='cart'> 
                 <h1>El carrito esta vacio</h1>
                     <Link to='/catalogo'>
-                    <button>Ir a comprar</button>
+                    <button id='CatalogButton'>Ir a comprar</button>
                     </Link>
             </div>
         

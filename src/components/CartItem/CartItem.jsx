@@ -20,9 +20,8 @@ function CartItem({imgUrl, id, title, price, qty, totalPrice}) {
                 </div>
                 <h1>{title}</h1>
             </div>
-            <p> Precio unitario <br/> ${price}</p>
-            <span>cantidad <br/> {qty}</span>
-            <p>total <br/> ${totalPrice}</p>
+            <span> {qty}</span>
+            <p> ${totalPrice}</p>
             <button onClick = {deleteI}>x</button>
 
         </div>    
