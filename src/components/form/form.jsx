@@ -6,7 +6,7 @@ function Form({ handleSubmit, handleChange, GenerateBuyOrder, user }) {
     return (
         <form onSubmit={handleSubmit}>
             <label
-                htmlFor="fullName"> Nombre y apellido
+                htmlFor="fullName"> Nombre y Apellido
             </label>
             <input
                 type="text" name="fullName" autoComplete="off"  onChange={handleChange}>
