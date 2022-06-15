@@ -19,7 +19,7 @@ function Cart() {
 
     const { cart, emptyCart, FinalPrice } = useCartContext()
     const [orderSent, setOrderSent] = useState();
-    const [user, setUser] = useState({ fullName: false , email: false , phoneNumber: false, password: false })
+    const [user, setUser] = useState({ fullName: false , email: false ,emailValidation:false, phoneNumber: false, password: false })
     
     const handleChange = (event) => {
         setUser({ ...user, [event.target.name]: event.target.value });
