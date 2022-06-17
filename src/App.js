@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import './style.css';
 import Cart from './components/cart/cart.jsx';
 import ContextProvider from './context/CartContext.jsx';
+import Login from './components/login/login.jsx';
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path= '/item/:id' element={<ItemDetailContainer />} />
           <Route path= '/category/:cat' element={<ItemListContainer/>}/>
           <Route path='/cart' element={<Cart />} />
+          <Route path='/login' element={<Login/>}/>
        </Routes>
 
     </BrowserRouter>
