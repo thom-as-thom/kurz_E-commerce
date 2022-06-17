@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './clickeable.css'
 
 function Clickeable({texto}) {

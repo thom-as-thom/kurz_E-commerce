@@ -1,14 +1,17 @@
 import React from 'react'
-import ItemCount from '../itemCount/itemCount'
-import './ItemDetail.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import { useCartContext } from '../../context/CartContext'
+
+import ItemCount from '../itemCount/itemCount'
 import Loading from '../loading/Loading'
 
+import './ItemDetail.css'
 
 
-function ItemDetail({ name, img, price, id, description }) {
+
+function ItemDetail({ name, img, price, id, description, stock }) {
     
     const [loading, setLoading] = useState(true);
     
@@ -21,7 +24,7 @@ function ItemDetail({ name, img, price, id, description }) {
 
     const buyEvent=(number)=>{
         setInputType('afterBuy')
-        cartModification(id, name, img, price, number)
+        cartModification(id, name, img, price, number,stock)
     }
 
 
@@ -44,8 +47,9 @@ function ItemDetail({ name, img, price, id, description }) {
                 {inputType === "preBuy"? 
                     <div>
                         <h3 className='price'>${price}</h3>
-                        <ItemCount stock='5' initial='1' 
+                        <ItemCount stock={stock} initial='1' 
                         onAdd = {buyEvent} id = {id}/>
+                        
                     </div>
                 :
                     <div>

@@ -1,12 +1,13 @@
 import {React, useState} from 'react'
 import { useCartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+import { addDoc, collection, getFirestore} from 'firebase/firestore'
+
 import CartItem from '../CartItem/CartItem'
-import './cart.css'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import Form from '../form/form'
 import Loading from '../loading/Loading'
 
+import './cart.css'
 
 
 function Cart() {
@@ -34,6 +35,7 @@ function Cart() {
     
     today = dd + '/' + mm + '/' + yyyy;
     
+    
     function GenerateBuyOrder() {
         let order = {}
         order.buyer = { user }
@@ -50,7 +52,8 @@ function Cart() {
         addDoc(queryCollection, order)
         .then(resp => setOrderSent(resp.id))
         .catch(err => console.log(err))
-        .finally (emptyCart)
+        .finally(emptyCart)
+        
     }
 
     return (

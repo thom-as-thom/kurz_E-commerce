@@ -1,7 +1,10 @@
-import { ImCart } from "react-icons/im";
 import React from 'react'
-import './cartWidget.css'
+
+import { ImCart } from "react-icons/im";
+
 import { useCartContext } from "../../context/CartContext";
+
+import './cartWidget.css'
 
 function CartWidget() {
 const{TotalQty} = useCartContext()

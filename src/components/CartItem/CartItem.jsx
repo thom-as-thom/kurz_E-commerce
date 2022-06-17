@@ -1,8 +1,11 @@
 import React from 'react';
-import './CartItem.css';
 
 import { useCartContext } from '../../context/CartContext'
+
 import ItemCount from '../itemCount/itemCount';
+
+import './CartItem.css';
+
 
 
 function CartItem({imgUrl, id, title, price, qty, totalPrice, stock}) {

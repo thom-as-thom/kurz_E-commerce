@@ -1,6 +1,8 @@
 import React from 'react'
-import'./Loading.css'
+
 import Logo from '../logo/logo'
+
+import'./Loading.css'
 
 function Loading() {
     return (

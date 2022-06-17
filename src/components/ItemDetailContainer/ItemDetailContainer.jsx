@@ -1,9 +1,11 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
-import ItemDetail from '../ItemDetail/itemDetail.jsx'
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
+
+import ItemDetail from '../ItemDetail/itemDetail.jsx'
 import Loading from '../loading/Loading.jsx'
-import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
 
 function ItemDetailContainer() {

@@ -22,9 +22,9 @@ function ContextProvider({children}) {
     
 
 
-    const cartModification = (id, name, photo, price, qty) => {
+    const cartModification = (id, name, photo, price, qty, stock) => {
         let totalprice = price*qty
-        let cartProduct = {id, name, photo, price, qty, totalprice}
+        let cartProduct = {id, name, photo, price, qty, totalprice, stock}
         const isInCart = cart.findIndex(producto => producto.id === id) //is in cart corresponde al index del producto en caso de ser encontrado. de no encontrarlo devuelve -1
             if(isInCart === -1 )
                 cartProductAux = [...cart, cartProduct] 
