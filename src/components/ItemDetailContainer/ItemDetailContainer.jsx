@@ -27,7 +27,7 @@ return (
     loading ? 
     <Loading/>
     :
-    <ItemDetail name={detailedBlend.title} img={detailedBlend.imgUrl} price={detailedBlend.price} description={detailedBlend.description} id={detailedBlend.id}/>
+        <ItemDetail name={detailedBlend.title} img={detailedBlend.imgUrl} price={detailedBlend.price} description={detailedBlend.description} id={detailedBlend.id} stock={detailedBlend.stock} />
     
 )
 }
