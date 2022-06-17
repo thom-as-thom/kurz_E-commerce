@@ -41,7 +41,6 @@ function NavBar() {
 						<Link onClick={click} to='/category/65 g'>
 						<Clickeable  texto= 'presentacion 65g'/>
 						</Link>
-					<Clickeable  texto='FAQ'/> 
 					<Link onClick={click} to='/cart'>
 					<Clickeable texto={<CartWidget/>} />
 					</Link>

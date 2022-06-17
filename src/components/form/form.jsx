@@ -4,6 +4,10 @@ import './form.css'
 
 function Form({ handleSubmit, handleChange, GenerateBuyOrder, user }) {
 
+    const validation = (input) => {
+        return input.includes ('@')
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <label
@@ -16,22 +20,22 @@ function Form({ handleSubmit, handleChange, GenerateBuyOrder, user }) {
                 htmlFor="email">Email
             </label>
             <input
-                type="email" name="email" autocomplete="off" onChange={handleChange}>
+                type="email" name="email" autoComplete="off" onChange={handleChange}>
             </input>
                         <label
                 htmlFor="emailValidation">Repetir Email
             </label>
             <input
-                type="email" autocomplete="off" name="emailValidation" onChange={handleChange}>
+                type="email" autoComplete="off"  name="emailValidation" onChange={handleChange}>
             </input>
 
             <label
                 htmlFor="phoneNumber"> Numero de telefono
             </label>
             <input
-                type="text" autocomplete="off" name="phoneNumber" onChange={handleChange}>
+                type="text" autoComplete="off" name="phoneNumber" onChange={handleChange}>
             </input>
-            <button id="submit"  className={!user.fullName || !user.email || !user.phoneNumber || !(user.email === user.emailValidation) ? 'disabled' : 'enabled'} disabled={!user.fullName || !(user.email===user.emailValidation) || !user.phoneNumber} onClick={GenerateBuyOrder}>
+            <button id="submit"  className={!user.fullName || validation(user.email) ||!user.email || !user.phoneNumber || !(user.email === user.emailValidation) ? 'disabled' : 'enabled'} disabled={!user.fullName|| !(user.email===user.emailValidation)|| validation(user.email) || !user.phoneNumber} onClick={GenerateBuyOrder}>
                 FINALIZAR COMPRA
             </button>
         </form>
