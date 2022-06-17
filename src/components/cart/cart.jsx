@@ -28,6 +28,7 @@ function Cart() {
     const handleSubmit = (event) => {
         event.preventDefault()
     }
+
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); 
@@ -60,8 +61,10 @@ function Cart() {
         loading ? 
             <Loading/>
             :
-        orderSent ?
-            <h1 id='Buyed'>Gracias por tu compra {user.fullName}.<br/> El id de tu pedidos es {orderSent}.<br/> Te estaremos enviando la facturacion a {user.email} </h1>
+            orderSent ?
+                <div  id='Buyed'>
+                    <h1>Gracias por tu compra {user.fullName}.<br/> El id de tu pedidos es {orderSent}.<br/> Te estaremos enviando la facturacion a {user.email} </h1>
+                </div>
         :
             (cart.length > 0) ? 
         
@@ -76,7 +79,7 @@ function Cart() {
                     <Form user={user} GenerateBuyOrder={GenerateBuyOrder} handleChange={handleChange} handleSubmit={handleSubmit} />
                 </div>
         : 
-            <div className='cart'> 
+            <div id='emptyCart' className='cart'> 
                 <h1>El carrito esta vacio</h1>
                     <Link to='/catalogo'>
                     <button id='CatalogButton'>Ir a comprar</button>

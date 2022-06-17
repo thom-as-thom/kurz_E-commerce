@@ -16,3 +16,19 @@
     padding: 0.5em;
     background-color: var(--lightPurple);
 }
+#Buyed {
+    display:flex ;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--mainOrange);
+    margin:5%
+}
+
+#emptyCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--lightOrange);
+    margin: 5%;
+    padding: 5%;
+}
