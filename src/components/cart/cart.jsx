@@ -63,7 +63,7 @@ function Cart() {
             (cart.length > 0) ? 
         
                 <div className='cart'>
-                {cart.map((prod)=> <CartItem key={prod.id} id={prod.id} title={prod.name} imgUrl={prod.photo} price={prod.price} qty={prod.qty} totalPrice={prod.totalprice}/>)}
+                        {cart.map((prod) => <CartItem key={prod.id} id={prod.id} title={prod.name} imgUrl={prod.photo} price={prod.price} qty={prod.qty} totalPrice={prod.totalprice} stock={prod.stock}/>)}
                         <div id='spanButton'>
                             <span id='totalPrice'> 
                             total: $ {FinalPrice}
