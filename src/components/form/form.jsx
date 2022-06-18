@@ -4,9 +4,6 @@ import './form.css'
 
 function Form({ handleSubmit, handleChange, GenerateBuyOrder, user }) {
 
-    const validation = (input) => {
-        return input.includes ('@')
-    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -35,7 +32,7 @@ function Form({ handleSubmit, handleChange, GenerateBuyOrder, user }) {
             <input
                 type="text" autoComplete="off" name="phoneNumber" onChange={handleChange}>
             </input>
-            <button id="submit"  className={!user.fullName || validation(user.email) ||!user.email || !user.phoneNumber || !(user.email === user.emailValidation) ? 'disabled' : 'enabled'} disabled={!user.fullName|| !(user.email===user.emailValidation)|| validation(user.email) || !user.phoneNumber} onClick={GenerateBuyOrder}>
+            <button id="submit"  className={!user.fullName ||!user.email || !user.phoneNumber || !(user.email === user.emailValidation) ? 'disabled' : 'enabled'} disabled={!user.fullName|| !(user.email===user.emailValidation)|| !user.phoneNumber} onClick={GenerateBuyOrder}>
                 FINALIZAR COMPRA
             </button>
         </form>
